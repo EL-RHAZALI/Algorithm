@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int sentenceLength = 0;
+    int wordCount = 0;
+    int vowelCount = 0;
+
+    cout << "Enter a sentence (ending with a period): ";
+    char ch;
+    while (cin.get(ch) && ch != '.') {
+        sentenceLength++;
+
+        if (isalpha(ch)) {
+            switch (tolower(ch)) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    vowelCount++;
+                    break;
+            }
+        }
+
+        if (ch == ' ') {
+            wordCount++;
+        }
+    }
+
+    wordCount++;
+
+    cout << "Sentence Length: " << sentenceLength << endl;
+    cout << "Number of Words: " << wordCount << endl;
+    cout << "Number of Vowels: " << vowelCount << endl;
+
+    return 0;
+}
